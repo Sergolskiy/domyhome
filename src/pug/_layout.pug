@@ -1,0 +1,44 @@
+include _mixins
+
+block variables
+
+doctype html
+html(
+  lang="uk"
+  )
+  head
+
+    title= pageTitle
+
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1" )
+    //meta(name="viewport" content="initial-scale=1.0, width=device-width" )
+    link(rel="icon" href="img/favicon.ico" type="image/x-icon")
+    meta(name="description", content='Photoplay')
+
+    if isProduction
+      link(rel="stylesheet" href="css/build.css")
+    else
+      link(rel="stylesheet" href="css/libs.css")
+      link(rel="stylesheet" href="css/main.css")
+
+    block styles
+
+  body(class="page " + pageClass)
+
+
+
+    .page__wrapper
+
+      include modules/_header
+
+      main.page__content
+        block content
+
+      include modules/_footer
+
+
+
+    if !isProduction
+      block scripts
+      script(src="js/js/index.js")

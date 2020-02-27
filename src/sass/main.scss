@@ -1,0 +1,287 @@
+//@import "vars";
+//@import "mixins";
+@import "fonts";
+//@import "base";
+//@import "modules/*.scss";
+//@import "helpers";
+@import "owl.carousel/src/scss/owl.carousel";
+//@import "slick-slider/slick/slick.scss";
+//@import "aos/src/sass/aos";
+//@import "@fancyapps/fancybox/src/css/jquery.fancybox";
+
+//@import "./_slider";
+//@import "./_jquery.fancybox";
+//@import "./_jquery.mCustomScrollbar";
+
+
+
+
+@mixin linx ($link, $hover, $active, $bg, $bgHover) {
+  color: $link;
+  background: $bg;
+
+  &:hover {
+    color: $hover;
+    background: $bgHover;
+  }
+
+  &:active {
+    color: $active;
+    background: $bgHover;
+  }
+
+  transition: .4s cubic-bezier(.21,.65,.4,.96);
+}
+
+
+
+
+
+$white: #ffffff;
+$violet: #8063c6;
+$black: #0e172b;
+$greyBlack: #242d3d;
+$orange: #ffd23e;
+$greyBg: #f1f1ff;
+
+
+$maxWidth: 1380px;
+$laptopWidth: 1060px;
+
+$largeSize: 54px;
+$bigSize: 26px;
+$mediumSize: 19px;
+$lightSize: 16px;
+
+$laptopLargeSize: 46px;
+$laptopBigSize: 22px;
+$laptopMediumSize: 16px;
+$laptopLightSize: 13px;
+
+$tabletLargeSize: 46px;
+$tabletBigSize: 22px;
+$tabletMediumSize: 16px;
+$tabletLightSize: 13px;
+
+$mobileLargeSize: 38px;
+$mobileBigSize: 22px;
+$mobileMediumSize: 16px;
+$mobileLightSize: 13px;
+
+
+@mixin btn ($width) {
+  width: $width;
+
+  &:hover {
+    background: $blue;
+    color: $darkblue;
+  }
+
+  @media (max-width: 1600px) {
+    font-size: $laptopMediumSize;
+    height: 54px;
+  }
+  @media (max-width: 1200px) {
+    font-size: $mobileMediumSize
+  }
+
+  @media (max-width: 992px) {
+    width: $width - 160;
+    height: 45px;
+  }
+
+}
+
+
+*{
+  font-family: 'OpenSans', serif ;
+  box-sizing: border-box;
+}
+
+input[type="submit"], a{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.site-btn{
+  padding: 12px 33px;
+  border: 2px solid $black;
+  border-radius: 5px;
+  font: 14px 'OpenSans-Bold';
+  @include linx ($greyBlack, $white, $white, transparent, $black);
+}
+
+.site-big-btn{
+  padding: 16px 61px;
+  border-radius: 5px;
+  font: $lightSize 'OpenSans-Bold';
+  display: inline-block;
+  position: relative;
+  @include linx ($white, $greyBlack, $white, $violet, $orange);
+
+  &:before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 2px solid #533377;
+    @include linx ($white, $greyBlack, $white, $violet, $orange);
+    z-index: 1;
+    border-radius: 5px;
+  }
+
+  &:after{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    border: 2px solid #533377;
+    border-radius: 5px;
+  }
+
+  span{
+    position: relative;
+    z-index: 2;
+  }
+}
+
+
+.header{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  &__inner{
+    max-width: 1720px;
+    margin: 0 auto;
+    display: flex;
+    padding-top: 35px;
+    justify-content: space-between;
+  }
+
+  &__left{
+
+  }
+
+  &__logo{
+    width: 185px;
+  }
+
+  &__logo-img{
+
+  }
+
+  &__right{
+    display: flex;
+  }
+
+  &__menu{
+
+  }
+
+  &__menu-list{
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  &__menu-item{
+    margin-right: 35px;
+
+    &--active .header__menu-link{
+      @include linx ($violet, $violet, $violet, transparent, transparent);
+    }
+
+    &:last-child{
+      margin-left: 50px;
+      margin-right: 40px;
+    }
+  }
+
+  &__menu-link{
+    font: 14px 'OpenSans-Bold';
+    @include linx ($greyBlack, $violet, $violet, transparent, transparent);
+  }
+
+  &__submenu{
+    display: none;
+  }
+
+  &__submenu-item{
+
+  }
+
+  &__submenu-link{
+
+  }
+
+  &__btn{
+
+  }
+
+  &__btn-item{
+
+  }
+
+}
+
+.home-top{
+  min-height: 100vh;
+  background: $orange;
+  display: flex;
+  align-items: center;
+
+  &__content{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+  }
+
+  &__title{
+    max-width: 660px;
+
+    h1{
+      font: 70px/80px 'Quicksand-Bold';
+      margin-top: 0;
+    }
+  }
+
+  &__caption{
+    font: $mediumSize 'OpenSans';
+    max-width: 630px;
+  }
+
+  &__btn{
+
+  }
+
+  &__image{
+
+  }
+}
+
+
+
+
+
+.b-lazy {
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  max-width: 100%;
+  opacity: 0;
+}
+.b-lazy.b-loaded {
+  opacity: 1;
+}
+

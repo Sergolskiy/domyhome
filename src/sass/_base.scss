@@ -1,0 +1,44 @@
+html {
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  font-family: $base-font-family;
+  background-color: $base-bg-color;
+  -webkit-font-smoothing: antialiased;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.svg-icon {
+  display: inline-block;
+  vertical-align: middle;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+}
+
+a,
+button {
+  transition: color $default-transition-time, background-color $default-transition-time, border-color $default-transition-time, box-shadow $default-transition-time;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: rem(6px);
+  height: rem(6px);
+}
+
+p {
+  margin-top: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+//img {
+//  max-width: 100%;
+//  vertical-align: middle;
+//}

@@ -1,0 +1,175 @@
+@mixin md() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: md)) {
+    @content;
+  }
+}
+
+@mixin lg() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: lg)) {
+    @content;
+  }
+}
+
+@mixin xl() {
+  @media (min-width: map-get($map: $grid-breakpoints, $key: xl)) {
+    @content;
+  }
+}
+
+@mixin from-xs-to-lg() {
+  @if $is-em-media {
+    // Do some stuff
+  } @else {
+    @media (min-width: map-get($map: $grid-breakpoints, $key: xs)) and (max-width: map-get($map: $grid-breakpoints, $key: lg) - 0.02px) {
+      @content;
+    }
+  }
+}
+
+@mixin from-lg-to-xl() {
+  @if $is-em-media {
+    // Do some stuff
+  } @else {
+    @media (min-width: map-get($map: $grid-breakpoints, $key: lg)) and (max-width: map-get($map: $grid-breakpoints, $key: xl) - 0.02px) {
+      @content;
+    }
+  }
+}
+
+@mixin input-placeholder {
+  &::-moz-placeholder {
+    @content;
+  }
+
+  &::-webkit-input-placeholder {
+    @content;
+  }
+
+  &:-moz-placeholder {
+    @content;
+  }
+
+  &:-ms-input-placeholder {
+    @content;
+  }
+}
+
+@mixin center($position) {
+  position: absolute;
+
+  @if ($position == "vertical") {
+    top: 50%;
+    transform: translateY(-50%);
+  } @else if($position == "horizontal") {
+    left: 50%;
+    transform: translateX(-50%);
+  } @else if($position == "both") {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@function rem($size, $base: 16px) {
+  $remSize: $size / $base;
+
+  @return #{$remSize}rem;
+}
+
+@function em($size, $base: 16px) {
+  $emSize: $size / $base;
+
+  @return #{$emSize}em;
+}
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+@mixin font-face($name, $path, $weight: null, $style: null, $extensions: eot woff2 woff ttf svg) {
+  $src: null;
+  $mods: (eot: "?#iefix", svg: "#" + str-replace($name, " ", "_"));
+  $formats: (otf: "opentype", ttf: "truetype");
+
+  @each $ext in $extensions {
+    $mod: if(map-has-key($mods, $ext), $ext + map-get($mods, $ext), $ext);
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append($src, url(quote($path + "." + $mod)) format(quote($format)), comma);
+  }
+
+  @font-face {
+    font: {
+      family: quote($name);
+      style: $style;
+      weight: $weight;
+    }
+    src: $src;
+  }
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin position($position, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin sticky($args...) {
+  @include position(sticky, $args...);
+}
+
+@mixin reset-list() {
+  padding-left: 0;
+  margin: {
+    top: 0;
+    bottom: 0;
+  }
+  list-style: none;
+}
+
+@mixin reset-button() {
+  background-color: transparent;
+  border-width: 0;
+}
+
+@mixin box-shadow($color) {
+  box-shadow: $default-box-shadow rgba($color, 0.25);
+}
+
+@mixin row() {
+  margin: {
+    right: -$grid-gutter-width / 2;
+    left: -$grid-gutter-width / 2;
+  }
+}
+
+@mixin col() {
+  padding: {
+    right: $grid-gutter-width / 2;
+    left: $grid-gutter-width / 2;
+  }
+}
