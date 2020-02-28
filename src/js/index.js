@@ -22,6 +22,20 @@ import Inputmask from "inputmask/dist/inputmask/inputmask.date.extensions";
 $(document).ready(function () {
 
 
+    $(document).scroll(function () {
+        if($(window).scrollTop() > 0){
+            console.log($(window).scrollTop());
+            $('.header').addClass('header--scrolled');
+        } else {
+            $('.header').removeClass('header--scrolled');
+        }
+    });
+
+    $('.mobile-menu-btn__link').click(function () {
+        $('.header__menu').toggleClass('header__menu--open');
+        $('.mobile-menu-btn__link').toggleClass('mobile-menu-btn__link--open');
+        $('.header').toggleClass('open-menu');
+    });
 
 
 });
