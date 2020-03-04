@@ -37,6 +37,12 @@ $(document).ready(function () {
         $('.header').toggleClass('open-menu');
     });
 
+    $('.home-slider__items').owlCarousel({
+        items: 1,
+        nav: true,
+        dots: true
+    });
+
 
 });
 
