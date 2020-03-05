@@ -43,6 +43,15 @@ $(document).ready(function () {
         dots: true
     });
 
+    $('.what-we-do__mobile-tab').click(function () {
+
+        $('.what-we-do__mobile-tab').removeClass('active');
+        $(this).addClass('active');
+
+        $('.what-we-do__mobile-item').removeClass('active');
+        $('.what-we-do__mobile-item').eq($(this).index()).addClass('active');
+    });
+
 
 });
 
