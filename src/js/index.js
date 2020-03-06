@@ -50,6 +50,13 @@ $(document).ready(function () {
 
         $('.what-we-do__mobile-item').removeClass('active');
         $('.what-we-do__mobile-item').eq($(this).index()).addClass('active');
+
+        if($(this).closest('.what-we-do__mobile-2-wrap').length > 0 && !$(this).closest('.what-we-do__mobile-2-wrap').hasClass('active')){
+            $('.what-we-do__mobile-2-wrap').removeClass('active');
+            $(this).closest('.what-we-do__mobile-2-wrap').addClass('active');
+            $('.what-we-do__mobile-2-wrap').find('.what-we-do__mobile-items').slideUp();
+            $(this).closest('.what-we-do__mobile-2-wrap').find('.what-we-do__mobile-items').slideDown();
+        }
     });
 
 
