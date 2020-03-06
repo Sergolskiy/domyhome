@@ -60,5 +60,24 @@ $(document).ready(function () {
     });
 
 
+
+
+
+
+
+
+
+
+
+
+    // contact
+    $(document).on('click', '.contact-form__checked-link', function (e){
+        $('.contact-form__checked-link').removeClass('active');
+        $(this).addClass('active');
+    });
+
+
+    // contact end
+
 });
 
