@@ -1,0 +1,86 @@
+extends _layout
+
+block variables
+  - var pageTitle = "About";
+  - var pageClass = "about-page";
+
+block content
+  // Content
+  div.main-wrap
+    main.main
+      section.section-block
+        .home-top.about-page
+          .home-top__content
+            .contact-top__title.about-top__title About
+            .contact-top__form-caption.about-top__caption Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+
+      section.section-block
+        .stage
+          .stage__inner
+            .stage__content
+              .stage__list
+                .stage__item
+                  .stage__num 1 Stage
+                  .stage__img
+                    img(src="img/about/1.svg" alt="img")
+                  .stage__info
+                    .stage__subtitle 40% of writers
+                    .stage__title Lorem ipsum dolor sit amet
+                    .stage__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .stage__item
+                  .stage__num 2 Stage
+                  .stage__img
+                    img(src="img/about/2.svg" alt="img")
+                  .stage__info
+                    .stage__subtitle 20% of writers
+                    .stage__title Lorem ipsum dolor sit amet
+                    .stage__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .stage__item
+                  .stage__num 3 Stage
+                  .stage__img
+                    img(src="img/about/3.svg" alt="img")
+                  .stage__info
+                    .stage__subtitle 15% of writers
+                    .stage__title Lorem ipsum dolor sit amet
+                    .stage__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .stage__item
+                  .stage__num 4 Stage
+                  .stage__img
+                    img(src="img/about/4.svg" alt="img")
+                  .stage__info
+                    .stage__subtitle 10% of writers
+                    .stage__title Lorem ipsum dolor sit amet
+                    .stage__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                .stage__item
+                  .stage__num 5 Stage
+                  .stage__img
+                    img(src="img/about/5.svg" alt="img")
+                  .stage__info
+                    .stage__subtitle 13% of writers
+                    .stage__title Lorem ipsum dolor sit amet
+                    .stage__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+            .stage__bottom
+              .stage__bottom-img
+                img(src="img/about/tean.svg" alt="")
+                .stage__bottom-title
+                .stage__bottom-txt
+
+
+
+      section.section-block
+        .order-block
+          .order-block__title.section-title
+            h2 Lorem ipsum dolor sit amet <br> consect etur
+          .order-block__btn
+            a(href="#").site-big-btn
+              span Order Now
+
+
+
+        section.section-block
+        .subscribe-block
+          .subscribe-block__title Lorem ipsum dolor sit amet consectetur
+          .subscribe-block__form
+            input(type="text" placeholder="Email adress").subscribe-block__input
+            a(href="#").site-btn Order Now
