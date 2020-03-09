@@ -1,0 +1,121 @@
+extends _layout
+
+block variables
+  - var pageTitle = "Photoplay";
+  - var pageClass = "homepage";
+
+block content
+  // Content
+  div.main-wrap
+    main.main
+
+      section.section-block
+        .pricing
+          .pricing__inner
+            .pricing__title
+              h1 Pricing
+            .pricing__subtitle Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+
+            .pricing__block
+              .pricing__left
+                .pricing__violet
+                  .pricing__violet-row.pricing__violet-row--black
+                    .pricing__violet-name From
+                    .pricing__violet-price $
+                      span 17
+                    .pricing__violet-img
+                      .pricing__violet-img-txt 3
+                      .pricing__violet-img-txt hours
+
+                  .pricing__violet-row.pricing__violet-row--violet
+                    .pricing__violet-name From
+                    .pricing__violet-price $
+                      span 10
+                    .pricing__violet-img
+                      .pricing__violet-img-txt 5
+                      .pricing__violet-img-txt days
+                  .pricing__violet-row.pricing__violet-row--white
+                    .pricing__violet-name From
+                    .pricing__violet-price $
+                      span 9
+                    .pricing__violet-img
+                      .pricing__violet-img-txt 15
+                      .pricing__violet-img-txt days
+
+                .pricing__txt
+                  .pricing__txt-title Lorem ipsum dolor
+                  .pricing__txt-list
+                    .pricing__txt-item Lorem ipsum dolor sit amet, consectetur
+                    .pricing__txt-item Elit, sed do eiusmod tempor incididuut
+                    .pricing__txt-item Dolore magna aliqua. Ut enim ad minim
+                    .pricing__txt-item Vostrud exercitation
+                  .pricing__txt-btn
+                    a.pricing__txt-btn-left(href="#") Order Now
+                    a.pricing__txt-btn-left(href="#") View Sample
+
+              .pricing__right
+                .pricing__right-item
+                  .pricing__right-img
+                    img(src="img/pricing/benefits/1.svg")
+                  .pricing__right-title  Free revisions
+                  .pricing__right-caption Lorem ipsum dolor sit amet, cons ectetur adipisicing elisit
+                .pricing__right-item
+                  .pricing__right-img
+                    img(src="img/pricing/benefits/2.svg")
+                  .pricing__right-title  Money back
+                  .pricing__right-caption Lorem ipsum dolor sit amsit amet, et, consectetur
+                .pricing__right-item
+                  .pricing__right-img
+                    img(src="img/pricing/benefits/3.svg")
+                  .pricing__right-title Safety payment
+                  .pricing__right-caption Lorem ipsum dolor sit amet, consectetur adipisicing sit
+
+
+      section.section-block
+        .loyalty
+          .loyalty__inner
+            .loyalty__title.section-title
+              h2 Loyalty program
+            .loyalty__caption Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+
+            .loyalty__items
+              .loyalty__item
+                .loyalty__persent 5
+                  span.regular %
+                  span Off
+                .loyalty__txt all-time total: 25+ pages
+              .loyalty__item
+                .loyalty__persent 10
+                  span.regular %
+                  span Off
+                .loyalty__txt all-time total: 50+ pages
+              .loyalty__item
+                .loyalty__persent 15
+                  span.regular %
+                  span Off
+                .loyalty__txt all-time total: 100+ pages
+
+
+
+
+      section.section-block
+        .order-block
+          .order-block__title.section-title
+            h2 Lorem ipsum dolor sit amet <br> consect etur
+          .order-block__btn
+            a(href="#").site-big-btn
+              span Order Now
+
+
+
+      section.section-block
+      .subscribe-block
+        .subscribe-block__title Lorem ipsum dolor sit amet consectetur
+        .subscribe-block__form
+          input(type="text" placeholder="Email adress").subscribe-block__input
+          a(href="#").site-btn Order Now
+
+
+
+
+
