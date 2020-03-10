@@ -9,6 +9,8 @@
 @import "aos/src/sass/aos";
 //@import "@fancyapps/fancybox/src/css/jquery.fancybox";
 
+@import "intl-tel-input/src/css/intlTelInput";
+
 //@import "./_slider";
 //@import "./_jquery.fancybox";
 //@import "./_jquery.mCustomScrollbar";
@@ -1939,6 +1941,7 @@ input[type="submit"], a {
 
   &__txt{
     padding: 83px 105px 94px 84px;
+    background: $white;
   }
 
   &__txt-title{
@@ -2377,6 +2380,7 @@ input[type="submit"], a {
   &__form-content {
     display: flex;
     justify-content: center;
+    position: relative;
   }
 
   &__input {
@@ -2395,10 +2399,36 @@ input[type="submit"], a {
     transition: all 0.3s ease 0s;
     width: 100%;
     font-size: 19px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    background: white;
+
+    &--first{
+      position: absolute;
+      width: 265px;
+      left: 0;
+      top: 0;
+      z-index: 2;
+      background: #ffe48b;
+      //transition: 0.5s;
+
+      &.hide-input{
+        //opacity: 0;
+        //visibility: hidden;
+        //z-index: -10;
+        display: none;
+      }
+    }
 
     &:focus{
       background: white;
       color: black;
+    }
+
+    @media (max-width: 1600px) {
+      position: absolute;
+      width: 235px;
+      height: 46px;
     }
   }
 
@@ -2411,14 +2441,16 @@ input[type="submit"], a {
     text-align: center;
 
     @media (max-width: 1600px) {
-      max-width: 170px;
+      max-width: 165px;
       font-size: $lightSize;
+      height: 46px;
+      padding: 10px 29px !important;
     }
   }
 
   &__form-caption {
     text-align: center;
-    font: $lightSize "Open Sans Light";
+    font: $lightSize "OpenSans-Light";
     color: #14213d;
     margin-top: 15px;
   }
@@ -2469,7 +2501,7 @@ input[type="submit"], a {
   }
 
   &__content-item-title {
-    font: $lightSize "Open Sans Light";
+    font: $lightSize "OpenSans-Light";
     color: #14213d;
     margin-bottom: 3px;
 
@@ -3494,6 +3526,161 @@ input[type="submit"], a {
      top: -42px;
   }
 
+  .pricing__title h1 {
+    font: 60px 'Quicksand-Bold';
+  }
+
+  .pricing__subtitle{
+    font-size: $laptopMediumSize;
+  }
+
+  .pricing__subtitle,
+  .pricing__title {
+    padding-left: 0;
+  }
+
+  .pricing__subtitle {
+    line-height: 25px;
+    letter-spacing: 0;
+    margin-bottom: 50px;
+  }
+
+  .pricing__inner {
+    max-width: 1050px;
+    padding-top: 135px;
+    padding-bottom: 83px;
+  }
+
+  .pricing__left {
+    max-width: 690px;
+    max-height: 358px;
+  }
+
+  .pricing__violet-row {
+    margin-right: 20px;
+  }
+
+  .pricing__violet-price span,
+  .pricing__violet-price{
+    font-size: 30px;
+  }
+
+  .pricing__violet-name{
+    font-size: 13px;
+  }
+
+  .pricing__violet-img-txt{
+    font-size: $laptopMediumSize;
+  }
+
+  .pricing__violet-img-txt:last-child{
+    font-size: 13px;
+  }
+
+  .pricing__violet-row--black .pricing__violet-img{
+    width: 60px;
+    height: 88px;
+  }
+
+  .pricing__violet-row--violet .pricing__violet-img {
+    width: 60px;
+    height: 150px;
+  }
+
+  .pricing__violet-row--white .pricing__violet-img {
+    width: 60px;
+    height: 210px;
+  }
+
+  .pricing__violet-img-txt{
+    bottom: 30px;
+  }
+
+  .pricing__violet-img-txt:last-child{
+    bottom: 16px;
+  }
+
+  .pricing__violet {
+    padding: 40px 30px;
+  }
+
+  .pricing__txt-title {
+    font: 22px "OpenSans-Bold";
+  }
+
+  .pricing__txt {
+    padding: 50px 64px 60px 50px;
+  }
+
+  .pricing__txt-list{
+    font-size: 14px;
+    margin-top: 25px;
+    margin-bottom: 30px;
+  }
+
+  .pricing__right-title {
+    font: 22px/18px "OpenSans-Bold";
+  }
+
+  .pricing__right-caption {
+    font-size: 14px;
+    line-height: 23px;
+    margin-bottom: 10px;
+  }
+
+  .pricing__right-img {
+    margin-right: 25px;
+  }
+
+  .pricing__right-item {
+    margin-bottom: 62px;
+  }
+
+  .pricing__right {
+    max-width: 295px;
+    padding-top: 0;
+  }
+
+  .pricing__txt-btn-left {
+    font: 13px "OpenSans-Bold";
+    width: 110px;
+    padding: 8px 0;
+  }
+
+
+  .loyalty__inner {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding-top: 78px;
+    padding-bottom: 84px;
+  }
+
+  .loyalty__caption {
+    max-width: 445px;
+  }
+
+  .loyalty__items{
+    max-width: 930px;
+    margin: 0 auto;
+    margin-top: 41px;
+    padding-left: 0;
+  }
+
+  .loyalty__items{
+    max-width: 930px;
+    margin: 0 auto;
+    margin-top: 41px;
+  }
+
+  .loyalty__persent{
+    font: 66px 'Quicksand-Bold';
+  }
+
+  .loyalty__persent:after {
+    margin-top: 10px;
+    margin-bottom: 17px;
+  }
+
 }
 
 @media (max-width: 1280px) {
@@ -3937,6 +4124,69 @@ input[type="submit"], a {
     margin-top: -1585px;
   }
 
+  .pricing__subtitle, .pricing__title {
+    text-align: center;
+  }
+
+  .pricing__subtitle{
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .pricing__block{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing__right{
+    margin-top: 45px;
+    display: flex;
+    max-width: 720px;
+    justify-content: space-between;
+  }
+
+  .pricing__right-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing__right-img {
+    height: auto;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .pricing__right-caption{
+    text-align: center;
+  }
+
+  .loyalty__item{
+    padding-left: 45px;
+    text-align: center;
+  }
+
+  .loyalty__persent span,
+  .loyalty__persent .regular,
+  .loyalty__persent{
+    font: 47px 'Quicksand-Bold';
+  }
+
+  .loyalty__persent:after {
+    margin-top: 13px;
+    margin-bottom: 17px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .loyalty__item{
+    padding: 0;
+  }
+
+  .loyalty__caption {
+    font: 16px "OpenSans";
+  }
+
 }
 
 
@@ -4117,6 +4367,75 @@ input[type="submit"], a {
     flex-direction: column;
     align-items: center;
   }
+
+  .pricing__left{
+    flex-direction: column;
+    max-height: initial;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .pricing__violet{
+    flex-direction: row-reverse;
+    transform: rotate(90deg);
+    width: 270px;
+    height: 402px;
+    padding: 0;
+    margin-bottom: -65px;
+    margin-top: -66px;
+  }
+
+  .pricing__violet-row:last-child,
+  .pricing__violet-row{
+    width: 60px;
+    margin-right: 23px;
+  }
+
+  .pricing__violet-name{
+    transform: rotate(-90deg) translate(-25px, -20px);
+  }
+
+  .pricing__violet-price{
+    transform: rotate(-90deg) translateY(12px);
+  }
+
+  .pricing__violet-img{
+    margin-bottom: 50px;
+  }
+
+  .pricing__right{
+    flex-direction: column;
+    max-width: 240px;
+  }
+
+  .pricing__right-item{
+    margin-bottom: 40px;
+  }
+
+  .pricing__inner {
+    padding-top: 90px;
+    padding-bottom: 65px;
+  }
+
+  .loyalty__inner {
+    padding-top: 58px;
+    padding-bottom: 74px;
+  }
+
+  .loyalty__items{
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .loyalty__item{
+    margin-top: 70px;
+    width: 100%;
+
+    &:first-child{
+      margin-top: 0;
+    }
+  }
+
 }
 
 @media (max-width: 550px) {
@@ -4750,6 +5069,9 @@ input[type="submit"], a {
   .contact-top__input {
     height: 44px;
     font-size: 15px;
+    width: 215px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
   }
 
   .contact-top__btn {
@@ -4773,6 +5095,51 @@ input[type="submit"], a {
     margin-left: 20px;
   }
 
+  .pricing__txt {
+    padding: 28px 18px 32px 18px;
+  }
+
+  .pricing__txt-btn-left:first-child,
+  .pricing__txt-btn-left{
+    margin: 0;
+    width: 100%;
+    padding: 11px 0;
+  }
+
+  .pricing__txt-btn-left + .pricing__txt-btn-left{
+    margin-bottom: 20px;
+  }
+
+  .pricing__txt-btn{
+    flex-direction: column-reverse;
+  }
+
+  .pricing__txt-title{
+    padding-left: 23px;
+  }
+
+  .pricing__left {
+    max-width: 280px;
+  }
+
+  .pricing__violet-row--white .pricing__violet-img {
+    height: 190px;
+    background-size: cover;
+  }
+
+  .pricing__violet-img {
+    margin-bottom: 82px;
+  }
+
+  .pricing__subtitle,
+  .loyalty__inner{
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .pricing__subtitle {
+    margin-bottom: 35px;
+  }
 
 }
 
@@ -4869,3 +5236,24 @@ input[type="submit"], a {
 }
 
 
+.iti--separate-dial-code .iti__selected-flag {
+  background-color: rgba(0, 0, 0, 0);
+  display: flex;
+}
+
+.iti__selected-dial-code{
+  order: 10;
+  //display: none;
+}
+
+.iti__selected-flag:focus{
+  outline: 0 !important;
+}
+
+.iti--allow-dropdown .iti__flag-container:hover .iti__selected-flag {
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.iti__selected-flag {
+  padding: 0 6px 0 20px;
+}

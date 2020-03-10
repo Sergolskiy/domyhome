@@ -6,6 +6,10 @@ import Blazy from 'blazy';
 
 import Inputmask from "inputmask/dist/inputmask/inputmask.date.extensions";
 
+import intlTelInput from 'intl-tel-input'
+
+import untils from 'intl-tel-input/build/js/utils'
+
 // import "jquery-ui/ui/widgets/slider";
 
 // import "@fancyapps/fancybox/dist/jquery.fancybox.min";
@@ -22,6 +26,39 @@ import AOS from "aos"
 
 
 $(document).ready(function () {
+
+    var input = document.querySelector("#phone");
+    intlTelInput(input, {
+        separateDialCode: true,
+        // utilsScript: "/js/utils.js?18",
+        utilsScript: untils,
+    });
+    var num = $('#phone').attr('placeholder').replace(/[0-9]/g, '9');
+    Inputmask({"mask": num}).mask('#phone');
+    $('#phone').attr('placeholder', 'Phone number');
+
+    input.addEventListener("countrychange", function() {
+        var num = $('#phone').attr('placeholder').replace(/[0-9]/g, '9');
+        $('#phone').attr('placeholder', 'Phone number');
+        Inputmask({"mask": num}).mask('#phone');
+    });
+
+    $('.contact-top__input--first').click(function () {
+        var that = $(this);
+        setTimeout(function () {
+            that.addClass('hide-input');
+        },50);
+        $(this).next().find('.contact-top__input').focus();
+    });
+
+    $(document).on('click', function (e) {
+        if($(e.target).closest('.iti').length == 0){
+            $('.contact-top__input--first').removeClass('hide-input');
+        }
+    });
+
+
+    // console.log(intlTelInput)
 
     var flagAnimate = true;
 
