@@ -16,6 +16,8 @@ import Inputmask from "inputmask/dist/inputmask/inputmask.date.extensions";
 
 // Inputmask({"mask": "+7 (999) 999 - 99 - 99"}).mask('.phone');
 
+import AOS from "aos"
+
 
 
 
@@ -151,6 +153,13 @@ $(document).ready(function () {
 
 
     // contact end
+
+
+    AOS.init({
+        duration: 800,
+        offset: 200,
+        once: true
+    });
 
 });
 
