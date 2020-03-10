@@ -27,38 +27,42 @@ import AOS from "aos"
 
 $(document).ready(function () {
 
-    var input = document.querySelector("#phone");
-    intlTelInput(input, {
-        separateDialCode: true,
-        // utilsScript: "/js/utils.js?18",
-        utilsScript: untils,
-    });
-    var num = $('#phone').attr('placeholder').replace(/[0-9]/g, '9');
-    Inputmask({"mask": num}).mask('#phone');
-    $('#phone').attr('placeholder', 'Phone number');
+    if($('#phone').length > 0) {
 
-    input.addEventListener("countrychange", function() {
+        var input = document.querySelector("#phone");
+        intlTelInput(input, {
+            separateDialCode: true,
+            // utilsScript: "/js/utils.js?18",
+            utilsScript: untils,
+        });
         var num = $('#phone').attr('placeholder').replace(/[0-9]/g, '9');
-        $('#phone').attr('placeholder', 'Phone number');
         Inputmask({"mask": num}).mask('#phone');
-    });
+        $('#phone').attr('placeholder', 'Phone number');
 
-    $('.contact-top__input--first').click(function () {
-        var that = $(this);
-        setTimeout(function () {
-            that.addClass('hide-input');
-        },50);
-        $(this).next().find('.contact-top__input').focus();
-    });
+        input.addEventListener("countrychange", function () {
+            var num = $('#phone').attr('placeholder').replace(/[0-9]/g, '9');
+            $('#phone').attr('placeholder', 'Phone number');
+            Inputmask({"mask": num}).mask('#phone');
+        });
 
-    $(document).on('click', function (e) {
-        if($(e.target).closest('.iti').length == 0){
-            $('.contact-top__input--first').removeClass('hide-input');
-        }
-    });
+        $('.contact-top__input--first').click(function () {
+            var that = $(this);
+            setTimeout(function () {
+                that.addClass('hide-input');
+            }, 50);
+            $(this).next().find('.contact-top__input').focus();
+        });
+
+        $(document).on('click', function (e) {
+            if ($(e.target).closest('.iti').length == 0) {
+                $('.contact-top__input--first').removeClass('hide-input');
+            }
+        });
 
 
-    // console.log(intlTelInput)
+        // console.log(intlTelInput)
+
+    }
 
     var flagAnimate = true;
 
@@ -196,6 +200,37 @@ $(document).ready(function () {
         duration: 800,
         offset: 200,
         once: true
+    });
+
+
+    $(document).on('click', '.subscribe-block__form .site-btn', function(e){
+        e.preventDefault();
+        var that = $(this).closest('.subscribe-block__form');
+        if(that.find('input').val() == '') {
+            $(that).addClass('error');
+        } else {
+            $(that).removeClass('error');
+        }
+    });
+
+    $(document).on('click', '.contact-form__btn', function(e){
+        e.preventDefault();
+        var that = $(this).closest('.contact-form');
+        that.find('input').each(function () {
+            if($(this).val() == '') {
+                $(this).closest('.contact-form__row').addClass('error');
+            } else {
+                $(this).closest('.contact-form__row').removeClass('error');
+            }
+        });
+        that.find('textarea').each(function () {
+            if($(this).val() == '') {
+                $(this).closest('.contact-form__row').addClass('error');
+            } else {
+                $(this).closest('.contact-form__row').removeClass('error');
+            }
+        });
+
     });
 
 });
