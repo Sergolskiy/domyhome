@@ -1,0 +1,50 @@
+extends _layout
+
+block variables
+  - var pageTitle = "popups";
+  - var pageClass = "popup";
+
+block content
+  // Content
+  div.main-wrap
+    main.main.popup-example-wrap
+
+      section.section-block
+        .big-popup.popup
+          .big-popup__inner.popup__inner
+            .big-popup__close.popup__close
+            .big-popup__content
+              .big-popup__balloons
+              .big-popup__title Lorem ipsum dolor sit amet dolor sit
+              .big-popup__txt Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore
+              a(href="javascript:void(0);").site-btn.yell-btn.big-popup__btn Order Now
+              .big-popup__caption Used code
+                span WERTDFER
+                | at checkout
+
+      section.section-block
+        .horizontal-popup.popup
+          .horizontal-popup__inner.popup__inner
+            .horizontal-popup__close.popup__close
+            .horizontal-popup__content
+              .horizontal-popup__txt Get 5% of your first order with code
+                span HJGYGYFG
+              a(href="javascript:void(0);").site-btn.yell-btn.horizontal-popup__btn Order Now
+
+
+      section.section-block
+      .mini-popup.popup
+        .mini-popup__inner.popup__inner
+          .mini-popup__close.popup__close
+          .mini-popup__content
+            .mini-popup__txt Get 5% of your first order
+            a(href="javascript:void(0);").site-btn.yell-btn.mini-popup__btn Get 5% Off
+            .mini-popup__txt  Used code
+              span GHTFHGYG
+              | at chackout
+
+
+
+
+
+

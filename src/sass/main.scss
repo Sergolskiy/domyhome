@@ -3105,6 +3105,112 @@ input[type="submit"], a {
   color: #14213d;
 }
 
+
+//POPUPS
+.yell-btn {
+
+}
+.popup-example-wrap {
+  padding-top: 250px;
+  background: $orange;
+}
+.popup {
+
+
+  &__inner {
+
+  }
+  &__close {
+
+  }
+}
+
+.big-popup {
+  width: 100%;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  &__inner {
+    max-width: 660px;
+    width: 100%;
+    position: relative;
+    background: $violet;
+  }
+  &__close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 50px;
+    height: 50px;
+    background: white;
+  }
+  &__content {
+
+  }
+  &__balloons {
+
+  }
+  &__title {
+
+  }
+  &__txt {
+
+  }
+  &__btn {
+
+  }
+  &__caption {
+
+  }
+}
+
+.horizontal-popup {
+
+  &__inner {
+
+  }
+  &__close {
+
+  }
+  &__content {
+
+  }
+  &__txt {
+
+  }
+  &__btn {
+
+  }
+}
+
+.mini-popup {
+
+
+  &__inner {
+
+  }
+  &__close {
+
+  }
+  &__content {
+
+  }
+  &__txt {
+
+  }
+  &__txt {
+
+  }
+}
+
+
+
+//POPUPS END
+
+
+
 @media (max-width: 1600px) {
 
   .site-btn {
