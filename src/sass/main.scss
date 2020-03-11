@@ -452,7 +452,7 @@ input[type="submit"], a {
     position: absolute;
     top: 257px;
     right: 40px;
-    background: url("../img/home/h-t-img.png") center center no-repeat;
+    background: url("../img/home/h-t-img.webp") center center no-repeat;
     width: 820px;
     height: 837px;
   }
@@ -3083,7 +3083,7 @@ input[type="submit"], a {
   display: none;
   position: absolute;
   color: #ff8888;
-  font: 13px "Open Sans SemiBold";
+  font: 13px "OpenSans-Bold";
 
 }
 .subscribe-block__form.error .error-ms {
@@ -3902,8 +3902,9 @@ input[type="submit"], a {
     text-align: center;
   }
 
-  .home-top__image {
+  .home-top:not(.contact-top):not(.error-top) .home-top__image {
     display: none;
+    background: none;
   }
 
   .home-top__btn {
@@ -3949,7 +3950,7 @@ input[type="submit"], a {
     background-size: contain;
     display: block;
     transform: scale(1);
-    background: url("../img/404/404-mob.png") center center no-repeat;
+    background: url("../img/404/404-mob.webp") center center no-repeat;
     margin: 0 auto;
   }
 
@@ -3978,6 +3979,11 @@ input[type="submit"], a {
 
 
 @media (max-width: 992px) {
+
+  .subscribe-block__form.error .error-ms {
+    left: 5px;
+  }
+
   .home-how-it-work__items {
     flex-direction: column;
     justify-content: center;
@@ -4898,11 +4904,15 @@ input[type="submit"], a {
   }
 
   .owl-nav {
-    display: none;
+    display: none !important;
   }
 
   .home-slider:after {
     transform: rotate(180deg) translateX(-50%);
+    bottom: -13px;
+    right: 50%;
+    width: 193px;
+    height: 145px;
   }
 
   .subscribe-block__title {
