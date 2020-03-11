@@ -3108,10 +3108,14 @@ input[type="submit"], a {
 
 //POPUPS
 .yell-btn {
+  background: #ffd23e;
+  border-color: #ffd23e;
 
+  &:hover {
+    border-color: #ffd23e;
+  }
 }
 .popup-example-wrap {
-  padding-top: 250px;
   background: $orange;
 }
 .popup {
@@ -3120,49 +3124,132 @@ input[type="submit"], a {
   &__inner {
 
   }
-  &__close {
 
+  &__close {
+    cursor: pointer;
   }
+
 }
 
 .big-popup {
   width: 100%;
-  height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #fdf6db;
+  padding-top: 250px;
+  padding-bottom: 250px;
 
   &__inner {
     max-width: 660px;
     width: 100%;
     position: relative;
     background: $violet;
+    border-radius: 10px;
+
   }
+
   &__close {
     position: absolute;
-    right: 0;
-    top: 0;
-    width: 50px;
-    height: 50px;
+    right: 16px;
+    top: 16px;
+    width: 16px;
+    height: 16px;
     background: white;
+    background: url("../img/popups/close-white.svg") center no-repeat;
+    background-size: contain;
+    transition: 0.3s ease-in-out;
+    z-index: 5;
+
+    &:hover {
+      transform: rotate(90deg);
+    }
   }
+
+  &__figure {
+    position: absolute;
+    left: -139px;
+    top: -112px;
+    height: 689px;
+    width: 930px;
+    background: url("../img/popups/figures.svg") center no-repeat;
+    background-size: 50%;
+    z-index: 1;
+    transition: 0.5s;
+    animation: bgSize 1.5s ease, bgFade 1s ease 1.4s;
+    opacity: 0;
+  }
+
+  @keyframes bgSize {
+    from {
+      background-size: 50%;
+      opacity: 1;
+    }
+    to {
+      background-size: 100%;
+      opacity: 1;
+    }
+  }
+  @keyframes bgFade {
+    from {
+      background-size: 100%;
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      background-size: 100%;
+    }
+  }
+
   &__content {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 69px 113px 76px;
+    position: relative;
+    z-index: 1;
   }
+
   &__balloons {
-
+    background: url("../img/popups/balloons.svg") center no-repeat;
+    background-size: contain;
+    width: 220px;
+    height: 158px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -137px;
   }
+
   &__title {
-
+    font: 36px "Quicksand-Bold";
+    color: white;
+    text-align: center;
+    margin-bottom: 23px;
   }
+
   &__txt {
-
+    font: $lightSize "OpenSans";
+    color: white;
+    text-align: center;
+    margin-bottom: 46px;
   }
+
   &__btn {
-
+    margin-bottom: 25px;
   }
-  &__caption {
 
+  &__caption {
+    font: 14px "OpenSans";
+    color: white;
+
+    span {
+      text-transform: uppercase;
+      font-family: "OpenSans-Bold";
+      margin: 0 7px;
+      display: inline-flex;
+      letter-spacing: 2px;
+    }
   }
 }
 
