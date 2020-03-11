@@ -27,6 +27,10 @@ import AOS from "aos"
 
 $(document).ready(function () {
 
+    $('.mini-popup__close').click(function () {
+        $(this).closest('.mini-popup').toggleClass('open');
+    });
+
     if($('#phone').length > 0) {
 
         var input = document.querySelector("#phone");
