@@ -3133,11 +3133,16 @@ input[type="submit"], a {
 
 .big-popup {
   width: 100%;
-  display: flex;
+
   justify-content: center;
   background-color: #fdf6db;
   padding-top: 250px;
   padding-bottom: 250px;
+  display: none;
+
+  &.open {
+    display: flex;
+  }
 
   &__inner {
     max-width: 660px;
