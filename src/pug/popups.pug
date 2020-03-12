@@ -28,21 +28,35 @@ block content
           .horizontal-popup__inner.popup__inner
             .horizontal-popup__close.popup__close
             .horizontal-popup__content
-              .horizontal-popup__txt Get 5% of your first order with code
+              .horizontal-popup__txt Get 5% of your first order with code &nbsp;
                 span HJGYGYFG
-              a(href="javascript:void(0);").site-btn.yell-btn.horizontal-popup__btn Order Now
+              a(href="javascript:void(0);").site-btn.yell-btn.horizontal-popup__btn Get 5% Off
 
 
       section.section-block
-      .mini-popup.popup
-        .mini-popup__inner.popup__inner
-          .mini-popup__close.popup__close
-          .mini-popup__content
-            .mini-popup__txt Get 5% of your first order
-            a(href="javascript:void(0);").site-btn.yell-btn.mini-popup__btn Get 5% Off
-            .mini-popup__txt  Used code
-              span GHTFHGYG
-              | at chackout
+        .mini-popup.popup.open
+          .mini-popup__inner.popup__inner
+            .mini-popup__close.popup__close
+            .mini-popup__content
+              .mini-popup__txt Get 5% of your first order
+              a(href="javascript:void(0);").site-btn.yell-btn.mini-popup__btn Get 5% Off
+              .mini-popup__txt  Used code
+                span &nbsp;GHTFHGYG&nbsp;
+                | at chackout
+
+
+
+      section.section-block
+        .mini-popup.phone-popup.popup.open
+          .mini-popup__inner.popup__inner
+            .mini-popup__close.popup__close
+            .mini-popup__content
+              .mini-popup__txt Get a call back in 5 minutes or less
+              .mini-popup__phone-wrap
+                .contact-top__form-content
+                  input(type="text" placeholder="Phone number").contact-top__input.contact-top__input--first
+                  input(type="text" id="phone").contact-top__input
+                  a(href="javascript:void(0);").site-btn.yell-btn.mini-popup__btn Call me
 
 
 
