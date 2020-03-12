@@ -3180,7 +3180,8 @@ input[type="submit"], a {
     background-size: 50%;
     z-index: 1;
     transition: 0.5s;
-    animation: bgSize 1.5s ease, bgFade 1s ease 1.4s;
+    //animation: bgSize 1.5s ease, bgFade 1s ease 1.4s;
+    animation: bgSize 1.5s ease forwards;
     opacity: 0;
   }
 
@@ -3194,16 +3195,16 @@ input[type="submit"], a {
       opacity: 1;
     }
   }
-  @keyframes bgFade {
-    from {
-      background-size: 100%;
-      opacity: 1;
-    }
-    to {
-      opacity: 0;
-      background-size: 100%;
-    }
-  }
+  //@keyframes bgFade {
+  //  from {
+  //    background-size: 100%;
+  //    opacity: 1;
+  //  }
+  //  to {
+  //    opacity: 0;
+  //    background-size: 100%;
+  //  }
+  //}
 
   &__content {
     display: flex;
