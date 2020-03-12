@@ -2701,12 +2701,18 @@ input[type="submit"], a {
     border-color: $orange;
 
     &:hover {
-      border-color: $orange;
+      border-color: #533377;
+      background: $orange;
+      color: #14213d;
 
-      .contact-form__btn--arrow {
-        border-right: 2px solid white;
-        border-bottom: 2px solid white;
-      }
+      //.contact-form__btn--arrow {
+      //  border-right: 2px solid white;
+      //  border-bottom: 2px solid white;
+      //}
+    }
+
+    &:active {
+      border-color: #14213d;
     }
 
     &--arrow {
@@ -3110,9 +3116,19 @@ input[type="submit"], a {
 .yell-btn {
   background: #ffd23e;
   border-color: #ffd23e;
+  color: #14213d;
 
   &:hover {
-    border-color: #ffd23e;
+    background: #ffd23e;
+    //border-color: #ffd23e;
+    border-color: #533377;
+    color: #14213d;
+  }
+
+  &:active {
+    background: #ffd23e;
+    color: #14213d;
+    border-color: #14213d;
   }
 }
 .popup-example-wrap {
@@ -3295,9 +3311,6 @@ input[type="submit"], a {
 
   &__btn {
 
-    &:hover {
-      border-color: transparent;
-    }
   }
 }
 
