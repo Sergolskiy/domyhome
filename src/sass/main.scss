@@ -3232,11 +3232,11 @@ input[type="submit"], a {
     font: $lightSize "OpenSans";
     color: white;
     text-align: center;
-    margin-bottom: 46px;
+    margin-bottom: 50px;
   }
 
   &__btn {
-    margin-bottom: 25px;
+    margin-bottom: 19px;
   }
 
   &__caption {
@@ -3289,6 +3289,9 @@ input[type="submit"], a {
 
   &__btn {
 
+    &:hover {
+      border-color: transparent;
+    }
   }
 }
 
@@ -3301,6 +3304,7 @@ input[type="submit"], a {
     max-width: 445px;
     display: flex;
     align-items: center;
+    position: relative;
   }
   &__close {
     min-width: 51px;
@@ -4613,7 +4617,25 @@ input[type="submit"], a {
   }
 
 
+  .big-popup__figure {
+    display: none;
+  }
 
+  .big-popup {
+    position: relative;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      width: 100%;
+      background: url('../img/popups/figures.svg') center no-repeat;
+      background-size: contain;
+      z-index: 0;
+    }
+  }
 }
 
 
@@ -4728,6 +4750,11 @@ input[type="submit"], a {
 
 
 @media (max-width: 720px) {
+
+  .horizontal-popup{
+    display: none;
+  }
+
   .footer__center,
   .footer__right,
   .footer__left {
@@ -4875,6 +4902,13 @@ input[type="submit"], a {
     align-items: center;
   }
 
+  .big-popup {
+    padding-left:  20px;
+    padding-right: 20px;
+  }
+  .big-popup:before {
+      display: none;
+  }
 
   .mini-popup {
     padding: 0 0 20px 20px;
@@ -5691,6 +5725,52 @@ input[type="submit"], a {
 
   .mini-popup {
     padding: 0 0 20px 0;
+  }
+
+  .big-popup__content {
+    padding: 50px 20px 37px;
+
+  }
+
+  .big-popup__balloons {
+    width: 166px;
+    height: 120px;
+    top: -70px;
+  }
+
+  .big-popup__title {
+    font-size: 30px;
+    line-height: 42px;
+    margin-bottom: 10px;
+  }
+
+  .big-popup__txt {
+    line-height: 26px;
+    margin-bottom: 31px;
+  }
+
+  .big-popup__btn {
+    width: 100%;
+    text-align: center;
+    max-width: 220px;
+    margin-bottom: 16px;
+  }
+
+  .big-popup__caption {
+    font-size: 13px;
+    text-align: center;
+  }
+
+  .open.mini-popup .mini-popup__close{
+    z-index: 1;
+    top: 20px;
+    right: 20px;
+    left: auto;
+
+    min-width: 42px;
+    height: 42px;
+    opacity: 0.5;
+    background-size: contain !important;
   }
 
 }
