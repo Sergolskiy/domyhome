@@ -3289,6 +3289,9 @@ input[type="submit"], a {
 
   &__btn {
 
+    &:hover {
+      border-color: transparent;
+    }
   }
 }
 
