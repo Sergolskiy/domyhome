@@ -27,6 +27,10 @@ import AOS from "aos"
 
 $(document).ready(function () {
 
+    $('.big-popup__close').click(function (e) {
+        $(this).closest('.big-popup').toggleClass('open');
+    });
+
     $('.mini-popup__close').click(function () {
         $(this).closest('.mini-popup').toggleClass('open');
     });
