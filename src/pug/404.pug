@@ -2,7 +2,7 @@ extends _layout
 
 block variables
   - var pageTitle = "Photoplay";
-  - var pageClass = "homepage";
+  - var pageClass = "error-page";
 
 block content
   // Content
@@ -20,8 +20,8 @@ block content
               does not exist.
             .home-top__btn.error-top__btn
               .home-how-it-work__link-wrap
-                a.home-how-it-work__link(href="#") See How it Works
-          .home-top__image.error-top__image
+                a.home-how-it-work__link(href="#") Back to Homepage
+          .home-top__image.error-top__image.webp-img(data-webp="./img/404/404-bg.webp" data-img="./img/404/404-bg.png")
             .home-top__image-inner.error-top__image-inner
               .home-top__image-animate.animate-1
               .home-top__image-animate.animate-2
@@ -56,7 +56,7 @@ block content
           .subscribe-block__title Lorem ipsum dolor sit amet consectetur
           .subscribe-block__form
             span.error-ms Error message
-            input(type="text" placeholder="Email adress").subscribe-block__input
+            input(type="text" placeholder="Email adress").subscribe-block__input.email-field
             a(href="#").site-btn Order Now
 
 

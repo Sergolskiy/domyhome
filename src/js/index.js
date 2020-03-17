@@ -74,6 +74,12 @@ $(document).ready(function () {
 
     var flagAnimate = true;
 
+    $('.faq-block__inner-wrap').css('margin-top', (-$('.faq-block__inner-wrap').height()-200));
+    if($(window).width() < 550 ){
+        $('.faq-block__inner-wrap').css('margin-top', (-$('.faq-block__inner-wrap').height()-200));
+    }
+
+
     $(document).scroll(function () {
 
         if($(window).scrollTop() > 0){
@@ -89,10 +95,13 @@ $(document).ready(function () {
 
 
 
-            if( ($(window).scrollTop() + $(window).height() - 300 > fAQ) && flagAnimate && $(window).width() > 550 ) {
+            if( ($(window).scrollTop() + $(window).height() - 300 > fAQ) && flagAnimate ) {
 
 
-                FAQAnimation();
+
+                setTimeout(function () {
+                    FAQAnimation();
+                }, 100);
                 flagAnimate = false;
             }
         }
@@ -109,7 +118,7 @@ $(document).ready(function () {
 
         $('.faq-block__inner-wrap').css('margin-top', mTop + $('.faq-block--animate').eq(i).height() + mBottom);
         $('.faq-block--animate').last().addClass('animated');
-        $('.faq-block--animate').last().find('.loaders').addClass('loader');
+        $('.faq-block--animate').last().find('.loaders').addClass('loader2');
 
 
         var faqInterval = setInterval(function () {
@@ -118,7 +127,7 @@ $(document).ready(function () {
             if(i === animateBlock){
                 $('.faq-block__inner-wrap').css('margin-top', 0);
                 $('.faq-block--animate').eq(animateBlock - i).addClass('animated');
-                $('.faq-block--animate').eq(animateBlock - i).find('.loaders').addClass('loader2');
+                $('.faq-block--animate').eq(animateBlock - i).find('.loaders').addClass('loader');
                 clearInterval(faqInterval);
                 return;
             }
@@ -129,7 +138,7 @@ $(document).ready(function () {
                 // $('.faq-block__inner-wrap').css('margin-top', mTop + $('.faq-block--animate').eq(i).height());
                 $('.faq-block__inner-wrap').css('margin-top', mTop + $('.faq-block--animate').eq(i).height() + mBottom);
                 $('.faq-block--animate').eq(animateBlock - i).addClass('animated');
-                $('.faq-block--animate').eq(animateBlock - i).find('.loaders').addClass('loader2');
+                $('.faq-block--animate').eq(animateBlock - i).find('.loaders').addClass('loader');
             } else {
                 var mBottom = i === 1 ?
                     parseInt($('.faq-block--animate').eq(animateBlock - i).css('margin-bottom')) + 100 :
@@ -137,7 +146,7 @@ $(document).ready(function () {
 
                 $('.faq-block__inner-wrap').css('margin-top', mTop + $('.faq-block--animate').eq(i).height() + mBottom);
                 $('.faq-block--animate').eq(animateBlock - i).addClass('animated');
-                $('.faq-block--animate').eq(animateBlock - i).find('.loaders').addClass('loader');
+                $('.faq-block--animate').eq(animateBlock - i).find('.loaders').addClass('loader2');
             }
 
             i = i+1;
@@ -147,7 +156,9 @@ $(document).ready(function () {
     if($(window).width() < 550){
         $('.how-it-work__top-item').click(function () {
             $('.how-it-work__top-img').css('opacity', '0');
+            $('.how-it-work__top-step').css('opacity', '0.5');
             $(this).find('.how-it-work__top-img').css('opacity', '1');
+            $(this).find('.how-it-work__top-step').css('opacity', '1');
 
             $('.how-it-work__item').css('display', 'none');
             $('.how-it-work__item').eq($(this).index()).css('display', 'block');
@@ -214,22 +225,49 @@ $(document).ready(function () {
     $(document).on('click', '.subscribe-block__form .site-btn', function(e){
         e.preventDefault();
         var that = $(this).closest('.subscribe-block__form');
-        if(that.find('input').val() == '') {
-            $(that).addClass('error');
+        if($(this).prev().hasClass('email-field')){
+            var reg = /^[\w\.\d-_]+@[\w\.\d-_]+\.\w{2,4}$/i;
+
+            if(reg.test(that.find('input').val()) == false) {
+                $(that).addClass('error');
+            } else {
+                $(that).removeClass('error');
+            }
         } else {
-            $(that).removeClass('error');
+            if(that.find('input').val() == '') {
+                $(that).addClass('error');
+            } else {
+                $(that).removeClass('error');
+            }
         }
+
     });
 
     $(document).on('click', '.contact-form__btn', function(e){
         e.preventDefault();
         var that = $(this).closest('.contact-form');
         that.find('input').each(function () {
-            if($(this).val() == '') {
+            if($(this).hasClass('email-field')){
+                var reg = /^[\w\.\d-_]+@[\w\.\d-_]+\.\w{2,4}$/i;
+
+                if(reg.test($(this).val()) == false) {
+                    $(this).closest('.contact-form__row').addClass('error');
+                } else {
+                    $(this).closest('.contact-form__row').removeClass('error');
+                }
+            } else if($(this).val() == '') {
                 $(this).closest('.contact-form__row').addClass('error');
             } else {
                 $(this).closest('.contact-form__row').removeClass('error');
             }
+
+            var noi = /[а-я]/i;
+
+            if(noi.test($(this).val()) !== false && $(this).val() !== '') {
+                $(this).closest('.contact-form__row').addClass('error');
+            }
+
+
         });
         that.find('textarea').each(function () {
             if($(this).val() == '') {
@@ -237,8 +275,50 @@ $(document).ready(function () {
             } else {
                 $(this).closest('.contact-form__row').removeClass('error');
             }
+            var noi = /[а-я]/i;
+            if(noi.test($(this).val()) !== false && $(this).val() !== '') {
+                $(this).closest('.contact-form__row').addClass('error');
+            }
         });
 
+    });
+
+
+    var hasWebP = (function () {
+        // some small (2x1 px) test images for each feature
+        var images = {
+            basic: "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAACyAgCdASoCAAEALmk0mk0iIiIiIgBoSygABc6zbAAA/v56QAAAAA==",
+            lossless: "data:image/webp;base64,UklGRh4AAABXRUJQVlA4TBEAAAAvAQAAAAfQ//73v/+BiOh/AAA="
+        };
+
+        return function (feature) {
+            var deferred = $.Deferred();
+
+            $("<img>").on("load", function () {
+                // the images should have these dimensions
+                if (this.width === 2 && this.height === 1) {
+                    deferred.resolve();
+                } else {
+                    deferred.reject();
+                }
+            }).on("error", function () {
+                deferred.reject();
+            }).attr("src", images[feature || "basic"]);
+
+            return deferred.promise();
+        }
+    })();
+
+    hasWebP().then(function () {
+        $('.webp-img').each(function () {
+            var webp = $(this).data('webp');
+            $(this).css('background-image', 'url(' + webp + ')')
+        });
+    }, function () {
+        $('.webp-img').each(function () {
+            var img = $(this).data('img');
+            $(this).css('background-image', 'url(' + img + ')')
+        });
     });
 
 });
