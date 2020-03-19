@@ -1174,6 +1174,10 @@ input[type="submit"], a {
     outline: 0;
     transition: 0.3s;
 
+    //& + .site-btn {
+    //  padding: 12px 39px;
+    //}
+
     &:focus {
       background: #d6ccf1;
       color: $black;
@@ -2515,6 +2519,7 @@ input[type="submit"], a {
     font: $lightSize "OpenSans-Light";
     color: #14213d;
     margin-top: 15px;
+    letter-spacing: 0.5px;
   }
 
   &__content {
@@ -2707,7 +2712,7 @@ input[type="submit"], a {
     height: 45px;
     padding-left: 25px;
     border-radius: 8px;
-    border: 1px solid $lightViolet;
+    border: 1px solid transparent;
     color: #7c808b;
     background: #e0d9f3;
     font: $mediumSize 'OpenSans';
@@ -2725,7 +2730,7 @@ input[type="submit"], a {
     height: 100px;
     padding: 7px 20px;
     border-radius: 8px;
-    border: 1px solid $lightViolet;
+    border: 1px solid transparent;
     color: #7c808b;
     background: #e0d9f3;
     font: $mediumSize 'OpenSans';
@@ -4384,6 +4389,11 @@ input[type="submit"], a {
 
   .loyalty__items {
     padding-left: 0;
+  }
+
+  .contact-top__form-caption {
+    font-size: 13px;
+    letter-spacing: 0.3px;
   }
 
 }
