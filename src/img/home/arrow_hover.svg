@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.031" height="27.03" viewBox="0 0 15.031 27.03">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #8063c6;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="Arrow_hover" data-name="Arrow hover" class="cls-1" d="M421.539,2455.83l11.313,11.62a1.806,1.806,0,0,0,2.605,0,1.933,1.933,0,0,0,0-2.68l-10.01-10.28,10.01-10.29a1.92,1.92,0,0,0,0-2.67,1.807,1.807,0,0,0-2.606,0l-11.312,11.62A1.933,1.933,0,0,0,421.539,2455.83Z" transform="translate(-421 -2440.97)"/>
+</svg>
