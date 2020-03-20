@@ -78,37 +78,40 @@ $(document).ready(function () {
 
     var flagAnimate = true;
 
-    $('.faq-block__inner-wrap').css('margin-top', (-$('.faq-block__inner-wrap').height()-200));
-    if($(window).width() < 550 ){
-        $('.faq-block__inner-wrap').css('margin-top', (-$('.faq-block__inner-wrap').height()-200));
-    }
+    // $('.faq-block__inner-wrap').css('margin-top', (-$('.faq-block__inner-wrap').height()-200));
+    // if($(window).width() < 550 ){
+    //     $('.faq-block__inner-wrap').css('margin-top', (-$('.faq-block__inner-wrap').height()-200));
+    // }
 
 
     $(document).scroll(function () {
 
-        if($(window).scrollTop() > 0){
+        if($(window).scrollTop() > 10){
             // console.log($(window).scrollTop());
             $('.header').addClass('header--scrolled');
         } else {
             $('.header').removeClass('header--scrolled');
         }
 
-
-        if($('.faq-block').length > 0){
-            var fAQ = $('.faq-block').offset().top;
-
-
-
-            if( ($(window).scrollTop() + $(window).height() - 300 > fAQ) && flagAnimate ) {
-
-
-
-                setTimeout(function () {
-                    FAQAnimation();
-                }, 100);
-                flagAnimate = false;
-            }
+        if($(window).scrollTop() < 0){
+            $('.header').removeClass('header--scrolled');
         }
+
+        // if($('.faq-block').length > 0){
+        //     var fAQ = $('.faq-block').offset().top;
+        //
+        //
+        //
+        //     if( ($(window).scrollTop() + $(window).height() - 300 > fAQ) && flagAnimate ) {
+        //
+        //
+        //
+        //         setTimeout(function () {
+        //             FAQAnimation();
+        //         }, 100);
+        //         flagAnimate = false;
+        //     }
+        // }
 
     });
 
@@ -236,12 +239,16 @@ $(document).ready(function () {
                 $(that).addClass('error');
             } else {
                 $(that).removeClass('error');
+                $('.subscribe-success').addClass('open');
+                $('.subscribe-block').hide();
             }
         } else {
             if(that.find('input').val() == '') {
                 $(that).addClass('error');
             } else {
                 $(that).removeClass('error');
+                $('.subscribe-success').addClass('open');
+                $('.subscribe-block').hide();
             }
         }
 
@@ -259,6 +266,10 @@ $(document).ready(function () {
                 $(that).removeClass('error');
             }
         }
+    });
+
+    $('.email-field').click(function () {
+        $(this).closest('.subscribe-block__form').removeClass('error');
     });
 
     $(document).on('click', '.contact-form__btn', function(e){
@@ -285,8 +296,6 @@ $(document).ready(function () {
             if(noi.test($(this).val()) !== false && $(this).val() !== '') {
                 $(this).closest('.contact-form__row').addClass('error');
             }
-
-
         });
         that.find('textarea').each(function () {
             if($(this).val() == '') {
@@ -299,6 +308,14 @@ $(document).ready(function () {
                 $(this).closest('.contact-form__row').addClass('error');
             }
         });
+
+
+        if($('.contact-form__row.error').length === 0){
+            $('.contact-form').height($('.contact-form').height());
+            $('.contact-form').addClass('open');
+            $('.contact-form > div').hide();
+            $('.form-block__success').show();
+        }
 
     });
 
@@ -346,6 +363,19 @@ $(document).ready(function () {
         //     }
         // });
     });
+
+    $('.contact-form input, .contact-form textarea').click(function (e) {
+        $(this).closest('.contact-form__row').removeClass('error');
+    });
+
+    $('.contact-top__btn').click(function (e) {
+        e.preventDefault();
+        if($('#phone').val().length === $('#phone').attr('placeholder').length){
+            $('.contact-top__form').hide();
+            $('.contact-top__form-success').show();
+        }
+    });
+
 
 
     var hasWebP = (function () {

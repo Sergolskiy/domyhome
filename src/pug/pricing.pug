@@ -3,6 +3,7 @@ extends _layout
 block variables
   - var pageTitle = "Photoplay";
   - var pageClass = "homepage";
+  - var pageActive = "pricing";
 
 block content
   // Content
@@ -110,11 +111,16 @@ block content
 
       section.section-block
         .subscribe-block
-          span.error-ms Error message
+
           .subscribe-block__title Lorem ipsum dolor sit amet consectetur
           .subscribe-block__form
+            span.error-ms Error message
             input(type="text" placeholder="Email adress").subscribe-block__input.email-field
             a(href="#").site-btn Subscribe
+
+        .subscribe-success
+          img(src="./img/contact/contact-check.png" img="img")
+          span Awesome. Now you'll never miss out.
 
 
 

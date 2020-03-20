@@ -3,6 +3,7 @@ extends _layout
 block variables
   - var pageTitle = "Contact";
   - var pageClass = "contact-page";
+  - var pageActive = "contact";
 
 block content
   // Content
@@ -18,6 +19,11 @@ block content
                 input(type="phone" id="phone").contact-top__input
                 a(href="#").site-btn.contact-top__btn Call me back
               .contact-top__form-caption Get a call back in 15 minutes or less
+
+            .contact-top__form-success
+              .contact-top__form-success-title Сallback request has been sent
+              .contact-top__form-success-caption Expect our call within 15 minutes
+
             .contact-top__content
               .contact-top__content-item
                 .contact-top__content-item-ico
@@ -56,7 +62,7 @@ block content
                     .contact-top__content-item-title I need clarification on payment.
                     a(href="mailto:support@blablabla.com").contact-top__content-item-link billing@blablabla.com
 
-          .home-top__image.webp-img(data-webp="./img/contact/c-t-img.webp" data-img="./img/contact/с-t-img.png")
+          .home-top__image.webp-img(data-webp="./img/contact/c-t-img.webp" data-img="./img/contact/c-t-img.png")
             .home-top__image-inner
               .home-top__image-animate.animate-1
               .home-top__image-animate.animate-2
@@ -106,6 +112,12 @@ block content
                   a(href="#").site-btn.contact-form__btn Send
                     span.contact-form__btn--arrow
 
+                .form-block__success
+                  img(src="./img/contact/contact-check.png" alt="img")
+                  .form-block__success-title Your message has been sent!
+                  .form-block__success-caption We will answer your question shortly.
+
+
 
 
 
@@ -125,5 +137,5 @@ block content
             .subscribe-block__title Lorem ipsum dolor sit amet consectetur
             .subscribe-block__form
               span.error-ms Error message
-              input(type="text" placeholder="Email adress").subscribe-block__input
+              input(type="text" placeholder="Email adress").subscribe-block__input.email-field
               a(href="#").site-btn Subscribe

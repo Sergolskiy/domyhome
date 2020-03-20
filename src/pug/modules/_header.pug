@@ -9,13 +9,13 @@ header
       .header__right
         .header__menu
           ul.header__menu-list
-            li.header__menu-item
+            li(class=(pageActive === "about" ? "header__menu-item header__menu-item--active" : 'header__menu-item'))
               a(href="#").header__menu-link About
-            li.header__menu-item
+            li(class=(pageActive === "HTW" ? "header__menu-item header__menu-item--active" : 'header__menu-item'))
               a(href="#").header__menu-link How it works
-            li.header__menu-item
+            li(class=(pageActive === "pricing" ? "header__menu-item header__menu-item--active" : 'header__menu-item'))
               a(href="#").header__menu-link Pricing
-            li.header__menu-item.header__menu-item--submenu
+            li(class=(pageActive === "services" ? "header__menu-item header__menu-item--submenu header__menu-item--active" : 'header__menu-item header__menu-item--submenu'))
               a(href="#").header__menu-link Services
                 span
               .header__submenu
@@ -52,9 +52,9 @@ header
                     a(href="#").header__submenu-link Eiusmod tempor Encididunt
                   li.header__submenu-item
                     a(href="#").header__submenu-link consectetur Gdipisicing elit
-            li.header__menu-item
+            li(class=(pageActive === "contact" ? "header__menu-item header__menu-item--active" : 'header__menu-item'))
               a(href="#").header__menu-link Contact
-            li.header__menu-item
+            li(class=(pageActive === "index" ? "header__menu-item header__menu-item--active" : 'header__menu-item'))
               a(href="#").header__menu-link Log in
 
         .header__tablet-login
